@@ -1,6 +1,8 @@
 package fr.exia.plantagoshi.model;
 
-public class Plante {
+import java.util.Observable;
+
+public class Plante extends Observable{
 
 	private int idPlante;
 
@@ -19,6 +21,10 @@ public class Plante {
 		this.humiditeSol = humiditeSol;
 		this.tauxLuminosite = tauxLuminosite;
 		this.espece = espece;
+	}
+
+	public Plante(int idPlante, Espece espece1) {
+		this(idPlante,0,0,0,0, espece1);
 	}
 
 	public int getIdPlante() {
@@ -67,6 +73,11 @@ public class Plante {
 
 	public void setEspece(Espece espece) {
 		this.espece = espece;
+	}
+
+	public void hasBeenChanged() {
+		setChanged();
+		
 	}
 
 }

@@ -30,6 +30,13 @@ public class Serre {
 		return plantebuffer;
 	}
 	
+	public Plante getPlante(int idPlante){
+		for (Plante plante : plantes) {
+			if( plante.getIdPlante() == idPlante){
+				return plante;}
+		}
+		return null;
+	}
 	
 	public Serre(){
 		this.plantes = new ArrayList<Plante>();
